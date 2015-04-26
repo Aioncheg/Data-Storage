@@ -1,23 +1,20 @@
 .header {
 	background: rgb(61, 61, 61);
 	color: white;
-	height: 40px;
+	height: $header-height;
 	font-size: 24px;
 	padding-left: 4px;
-	line-height: 40px;
+	line-height: $header-height;
 }
 
 .layout {
-	position: absolute;
-	top: 40px;
-	bottom: 0px;
-	left: 0;
-	right: 0;
+	margin-top: -$header-height;
+	padding: $header-height+5 5px 5px 5px;
+	height: 100%;
 	overflow: hidden;
-	padding: 5px;
 
 	.sidebar {
-		width: 250px;
+		width: $sidebar-width;
 		height: 100%;
 		overflow: auto;
 		float: left;
@@ -26,7 +23,7 @@
 			height: 24px;
 			width: 100%;
 			border: 1px solid black;
-			background: rgba(255, 105, 180, 0.35);
+			background: $pink;
 			line-height: 24px;
 			padding-left: 5px;
 			cursor: pointer;
@@ -42,30 +39,51 @@
 			width: calc(100% - 10px);
 		}
 	}
-	.container {
-		padding-left: 250px;
+	.main-container {
+		padding-left: $sidebar-width;
 		height: 100%;
 		width: 100%;
-		.content {
-			height: 100%;
+
+		.dictionary-container {
 			width: 100%;
-			.parent {
-				height: 70%;
-				width: 100%;
-				padding-bottom: 2.5px;
-			}
-			.child {
-				height: 30%;
-				width: 100%;
-				padding-top: 2.5px;
-			}
+			height: 100%;
 		}
+
 	}
 }
 
-.table {
+.dictionary-content {
 	background: rgba(184, 231, 255, 0.44);
 	height: 100%;
 	width: 100%;
 	border: 1px solid black;
+	padding: 5px;
+	.dictionary-nav-container {
+		height: $dictionary-nav-width;
+		width: 100%;
+		background: $pink;
+		border: 1px solid;
+	}
+
+	.dictionary-table-container {
+		height: 100%;
+		width: 100%;
+		margin-top: -$dictionary-nav-width;
+		padding-top: $dictionary-nav-width+5px;
+
+		.dictionary-table-content {
+			border: 1px solid;
+			width: 100%;
+			height: 100%;
+			background: $pink;
+		}
+	}
+}
+
+.splitter_panel .hsplitter {
+	background: $body-background;
+	height: 5px;
+	&:hover {
+		background: #5F5F5F;
+	}
 }
