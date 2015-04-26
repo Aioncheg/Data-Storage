@@ -1,0 +1,71 @@
+.header {
+	background: rgb(61, 61, 61);
+	color: white;
+	height: 40px;
+	font-size: 24px;
+	padding-left: 4px;
+	line-height: 40px;
+}
+
+.layout {
+	position: absolute;
+	top: 40px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	padding: 5px;
+
+	.sidebar {
+		width: 250px;
+		height: 100%;
+		overflow: auto;
+		float: left;
+		padding-right: 5px;
+		.directory, .report {
+			height: 24px;
+			width: 100%;
+			border: 1px solid black;
+			background: rgba(255, 105, 180, 0.35);
+			line-height: 24px;
+			padding-left: 5px;
+			cursor: pointer;
+			&:not(:last-child) {
+				margin-bottom: 2px;
+			}
+			&:hover {
+				background: rgba(184, 231, 255, 0.44);
+			}
+		}
+		.report {
+			margin-left: 10px;
+			width: calc(100% - 10px);
+		}
+	}
+	.container {
+		padding-left: 250px;
+		height: 100%;
+		width: 100%;
+		.content {
+			height: 100%;
+			width: 100%;
+			.parent {
+				height: 70%;
+				width: 100%;
+				padding-bottom: 2.5px;
+			}
+			.child {
+				height: 30%;
+				width: 100%;
+				padding-top: 2.5px;
+			}
+		}
+	}
+}
+
+.table {
+	background: rgba(184, 231, 255, 0.44);
+	height: 100%;
+	width: 100%;
+	border: 1px solid black;
+}

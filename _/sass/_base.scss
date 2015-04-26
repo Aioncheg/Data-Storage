@@ -1,0 +1,10 @@
+html, body {
+	font-family: $font-primary;
+	font-size: 12px;
+	height: 100%;
+	background: $body-background;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}

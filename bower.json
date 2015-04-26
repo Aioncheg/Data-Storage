@@ -1,0 +1,6 @@
+{
+  "name": "data-storage",
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
