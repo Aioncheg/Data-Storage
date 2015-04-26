@@ -12,3 +12,18 @@ var splitter = $('.dictionary-container').split({
 $(window).resize(function () {
 	splitter.position(splitterPosition + '%')
 });
+
+var click = false;
+var mainPaddingShow = $('.layout .main-container').css('padding-left');
+var mainPaddingHide = $('.layout .sidebar-container').css('margin-left');
+$('.layout .vsplitter').click(function () {
+	if (!click) {
+		$('.layout .sidebar-container').hide();
+		$('.layout .main-container').css('padding-left', mainPaddingHide);
+		click = !click;
+	} else {
+		$('.layout .sidebar-container').show();
+		$('.layout .main-container').css('padding-left', mainPaddingShow);
+		click = !click;
+	}
+});

@@ -1,46 +1,68 @@
 .header {
-	background: rgb(61, 61, 61);
+	background: rgba(24, 24, 24, 0.9);
 	color: white;
 	height: $header-height;
 	font-size: 24px;
-	padding-left: 4px;
+	padding-right: $gutter-size;
 	line-height: $header-height;
+	text-align: right;
+	@include box-shadow;
 }
 
 .layout {
 	margin-top: -$header-height;
-	padding: $header-height+5 5px 5px 5px;
+	padding: $header-height+$gutter-size $gutter-size $gutter-size 0;
 	height: 100%;
 	overflow: hidden;
+	.vsplitter {
+		width: $gutter-size;
+		height: 100%;
+		float: left;
+		&:hover {
+			background: rgba(0, 0, 0, 0.5);
+			cursor: col-resize;
+		}
+	}
 
-	.sidebar {
+	.sidebar-container {
+		background: rgba(184, 231, 255, 0.44);
 		width: $sidebar-width;
 		height: 100%;
-		overflow: auto;
+		padding: $gutter-size;
+		margin-left: $gutter-size;
+		//border: 1px solid black;
+		@include box-shadow;
 		float: left;
-		padding-right: 5px;
-		.directory, .report {
-			height: 24px;
+		overflow: auto;
+		.sidebar {
 			width: 100%;
-			border: 1px solid black;
-			background: $pink;
-			line-height: 24px;
-			padding-left: 5px;
-			cursor: pointer;
-			&:not(:last-child) {
-				margin-bottom: 2px;
+			height: 100%;
+
+			.directory, .report {
+				height: 24px;
+				width: 100%;
+				//border: 1px solid black;
+				@include box-shadow;
+				background: $pink;
+				line-height: 24px;
+				padding-left: $gutter-size;
+				cursor: pointer;
+				&:not(:last-child) {
+					margin-bottom: 3px;
+				}
+				&:hover {
+					background: rgb(255, 231, 172);
+					border-bottom: 2px solid #fb535b;
+				}
 			}
-			&:hover {
-				background: rgba(184, 231, 255, 0.44);
+			.report {
+				margin-left: 10px;
+				width: calc(100% - 10px);
 			}
-		}
-		.report {
-			margin-left: 10px;
-			width: calc(100% - 10px);
 		}
 	}
 	.main-container {
-		padding-left: $sidebar-width;
+		padding-left: $sidebar-width+2*$gutter-size;
 		height: 100%;
 		width: 100%;
 
@@ -52,38 +74,43 @@
 	}
 }
 
-.dictionary-content {
+.parent-container, .child-container {
 	background: rgba(184, 231, 255, 0.44);
-	height: 100%;
-	width: 100%;
-	border: 1px solid black;
-	padding: 5px;
-	.dictionary-nav-container {
-		height: $dictionary-nav-width;
-		width: 100%;
-		background: $pink;
-		border: 1px solid;
-	}
-
-	.dictionary-table-container {
+	//border: 1px solid black;
+	@include box-shadow;
+	.dictionary-content {
 		height: 100%;
 		width: 100%;
-		margin-top: -$dictionary-nav-width;
-		padding-top: $dictionary-nav-width+5px;
 
-		.dictionary-table-content {
-			border: 1px solid;
+		padding: $gutter-size;
+		.dictionary-nav-container {
+			height: $dictionary-nav-width;
 			width: 100%;
-			height: 100%;
 			background: $pink;
+			//border: 1px solid;
+			@include box-shadow;
+		}
+
+		.dictionary-table-container {
+			height: 100%;
+			width: 100%;
+			margin-top: -$dictionary-nav-width;
+			padding-top: $dictionary-nav-width+$gutter-size;
+
+			.dictionary-table-content {
+				//border: 1px solid black;
+				@include box-shadow;
+				width: 100%;
+				height: 100%;
+				background: $pink;
+			}
 		}
 	}
 }
-
 .splitter_panel .hsplitter {
 	background: $body-background;
-	height: 5px;
+	height: $gutter-size;
 	&:hover {
-		background: #5F5F5F;
+		background: rgba(0, 0, 0, 0.5);
 	}
 }
