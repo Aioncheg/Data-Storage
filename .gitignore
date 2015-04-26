@@ -1,4 +1,4 @@
-node_components
-.sass-cache
-bower-components
-.idea
+node_components/*
+.sass-cache/*
+bower-components/*
+.idea/*
