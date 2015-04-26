@@ -1,0 +1,4 @@
+node_components
+.sass-cache
+bower-components
+.idea
